@@ -56,6 +56,36 @@ Node* reverseIterative(Node* &prev , Node* &curr){
     }
     return prev;
 }
+
+Node *reverseKNodes(Node* &head,int k){
+    // Empty Linked List case
+    if(head == NULL){
+        return head;
+    }
+    // Invalid case
+    int len = getLength(head);
+    if(k > len){
+        return head;
+    }
+    // Step - 1 => Reverse first k nodes
+    Node* prev = NULL;
+    Node* curr = head;
+    Node* forward = curr->next;
+    int count = 0;
+    while(count < k){
+        forward = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = forward;
+        count++;
+    }
+    // Step - 2 => Recursion 
+    if(forward != NULL){ // We still have nodes left to reverse
+        head->next = reverseKNodes(forward,k); // Connection step
+    }
+    // Return head 
+    return prev;
+}
 int main(){
     Node* head = new Node(10);
     Node* tail = head;
