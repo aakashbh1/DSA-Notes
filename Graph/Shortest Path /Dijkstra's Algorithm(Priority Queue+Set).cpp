@@ -1,3 +1,16 @@
+/*
+Dijkstra's algorithm is used to find the shortest paths from a single source 
+vertex to all other vertices in a graph with non-negative edge weights.
+
+It guarantees correct shortest path distances and is commonly used in routing
+algorithms, navigation systems, and transportation/logistics applications.
+
+The time complexity depends on the implementation but is generally efficient,
+with the best case being O((V + E) * log(V)) when using a priority queue for sparse graphs.
+However, it does not handle graphs with negative edge weights,
+for which the Bellman-Ford algorithm should be used.
+*/
+
 //USING PRIORITY QUEUE
 //Time : O(E * log(V))
 //E = number of edges
