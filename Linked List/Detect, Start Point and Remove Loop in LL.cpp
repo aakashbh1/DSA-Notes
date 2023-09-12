@@ -76,3 +76,49 @@ void removeLoop(Node* &head){
     // Removal step
     prev->next = NULL;
 }
+
+void removeLoop(Node* head)
+    {
+        // code here
+        // just remove the loop without losing any nodes
+        Node* slow=head;
+        Node* fast=head;
+        
+        if(!head || !head->next)
+        return;
+        
+        while(fast&&fast->next)
+        {
+            slow=slow->next;
+            fast=fast->next->next;
+            
+            if(slow==fast)
+            {
+                if(slow==head)
+                {
+                    while(fast->next!=slow)
+                    {
+                        fast=fast->next;
+                    }
+                    
+                    fast->next=NULL;
+                    
+                    return;
+                }
+                
+                slow=head;
+                
+                while(slow->next!=fast->next)
+                {
+                    slow=slow->next;
+                    fast=fast->next;
+                }
+                
+                fast->next=NULL;
+                return;
+                
+                
+                
+            }
+        }
+    }
