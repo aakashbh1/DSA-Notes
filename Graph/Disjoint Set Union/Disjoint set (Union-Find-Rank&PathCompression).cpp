@@ -13,7 +13,7 @@ void Union (int x, int y) {
     int x_parent = find(x);
     int y_parent = find(y);
 
-    if (x_parent == y_parent) 
+    if (x_parent == y_parent) // same set se belong kar rhe hai toh return kar do union kya karoge 
         return;
 
     if(rank[x_parent] > rank[y_parent]) {
