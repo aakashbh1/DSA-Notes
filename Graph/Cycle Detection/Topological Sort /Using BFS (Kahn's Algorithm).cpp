@@ -29,7 +29,7 @@ class Solution {
 	        que.pop();
 	        
 	        for(int &v : adj[u]) {
-	            indegree[v]--;
+	            indegree[v]--; // agar extra chal bhi gaya toh minus mei jayega atleast 0 toh nhi hoga 
 	            
 	            if(indegree[v] == 0) {
 	                que.push(v);
