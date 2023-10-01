@@ -8,13 +8,13 @@ priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> 
 // WAY-1  
 priority_queue<pair<int, int>, vector<pair<int, int>>, [](const pair<int, int>& a, const pair<int, int>& b) { // use const auto&a, const auto&b  
     return a.second < b.second;  
-}> pq; // Max-heap based on the second element  
+}> pq; // Min-heap based on the second element  
 
 
 // WAY-2  
 // Define priority queue with custom comparator using lambda function  
 auto cmp = [](const pair<int, int>& a, const pair<int, int>& b) {  // lambda function
-    return a.second > b.second; // Change to '<' for max-heap  
+    return a.second > b.second; // Change to '<' for min-heap  
 };  
 priority_queue<pair<int, int>, vector<pair<int, int>>, decltype(cmp)> pq(cmp);  
 
@@ -26,6 +26,6 @@ struct Compare {
     }  
 };  
 
-priority_queue<pair<int, int>, vector<pair<int, int>>, Compare> pq; // Max-heap based on the second element  
+priority_queue<pair<int, int>, vector<pair<int, int>>, Compare> pq; // Min-heap based on the second element  
 
 
