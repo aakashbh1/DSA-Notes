@@ -1,3 +1,17 @@
+/*
+Insertion:
+Time Complexity: O(L)
+
+Deletion:
+Time Complexity: O(L)
+
+Search:
+Time Complexity: O(L)
+
+Space:
+If there are n keys and the average length of the keys is L, and the alphabet size is A, then the space complexity is approximately O(n * L * A).
+*/
+
 class TrieNode {
 public:
     TrieNode *child[26];
