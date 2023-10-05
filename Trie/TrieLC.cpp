@@ -29,8 +29,8 @@ public:
             if (!p->child[i]) return false;
             p = p->child[i];
         }
-        if (prefix==false) return p->isWord;
-        return true;
+        if (prefix==false) return p->isWord; // for search function 
+        return true; // for startWith
     }
     bool startsWith(string prefix) {
         return search(prefix, true);
